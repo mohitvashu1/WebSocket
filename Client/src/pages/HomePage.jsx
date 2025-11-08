@@ -17,11 +17,14 @@ const HomePage = () => {
           : 'md:grid-cols-2'
         } `}
       >
-        <Sidebar />
+        <Sidebar  selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}/>
 
-        <ChatContainer setSelectedUser={setSelectedUser} />
+        <ChatContainer  selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser} />
 
-        {selectedUser && <RightSidebar />}
+        {selectedUser && <RightSidebar selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}  />}
       </div>
     </div>
   )
